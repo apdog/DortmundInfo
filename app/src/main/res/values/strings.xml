@@ -1,3 +1,25 @@
 <resources>
     <string name="app_name">DortmundInfo</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="description_logo">Логотип команды</string>
+    <string name="name_of_club">Название команды</string>
+    <string name="place_in_the_league">Место в лиге</string>
+    <string name="date_of_founded_body">Дата основания</string>
+    <string name="year_of_founded">YYYY</string>
+    <string name="country_body">Страна</string>
+    <string name="name_of_country">Country</string>
+    <string name="city_body">Город</string>
+    <string name="name_of_city">City</string>
+    <string name="stadium_body">Стадион</string>
+    <string name="name_of_stadium">Stadium</string>
+    <string name="size_of_stadium_body">Наполняемость</string>
+    <string name="capacity_of_stadium">Capacity</string>
+    <string name="text_button">Перейти на сайт</string>
+    <string name="name_of_player">Имя игрока</string>
+    <string name="position_of_player">Позиция</string>
+    <string name="place_of_the_club">#</string>
+    <string name="name_of_the_club">Название команды</string>
+    <string name="photo_of_player">Фотография игрока</string>
+    <string name="logo_of_the_club">Логотип команды</string>
 </resources>

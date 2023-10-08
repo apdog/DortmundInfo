@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/main_root">
+
+    <fragment
+        android:id="@+id/main_root"
+        android:name="com.puhovdev.dortmundinfo.presentation.view.MainInfoFragment"
+        android:label="fragment_main_info"
+        tools:layout="@layout/fragment_main_info" >
+        <action
+            android:id="@+id/action_mainInfoFragment_to_tournamentList23"
+            app:destination="@id/tournament_list_root" />
+        <action
+            android:id="@+id/action_main_root_to_playersFragment"
+            app:destination="@id/players_root" />
+    </fragment>
+    <fragment
+        android:id="@+id/tournament_list_root"
+        android:name="com.puhovdev.dortmundinfo.presentation.view.TournamentListFragment"
+        android:label="fragment_tournament_list"
+        tools:layout="@layout/fragment_tournament_list" >
+        <action
+            android:id="@+id/action_tournamentList2_to_mainInfoFragment2"
+            app:destination="@id/main_root" />
+        <action
+            android:id="@+id/action_tournament_list_root_to_playersFragment"
+            app:destination="@id/players_root" />
+    </fragment>
+    <fragment
+        android:id="@+id/players_root"
+        android:name="com.puhovdev.dortmundinfo.presentation.view.PlayersFragment"
+        android:label="fragment_players"
+        tools:layout="@layout/fragment_players" >
+        <action
+            android:id="@+id/action_playersFragment_to_main_root"
+            app:destination="@id/main_root" />
+        <action
+            android:id="@+id/action_playersFragment_to_tournament_list_root"
+            app:destination="@id/tournament_list_root" />
+
+    </fragment>
+</navigation>

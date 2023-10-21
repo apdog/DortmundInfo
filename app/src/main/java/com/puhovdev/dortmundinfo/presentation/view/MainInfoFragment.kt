@@ -1,5 +1,6 @@
 package com.puhovdev.dortmundinfo.presentation.view
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -9,6 +10,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import com.puhovdev.dortmundinfo.databinding.FragmentMainInfoBinding
 import com.puhovdev.dortmundinfo.presentation.viewModel.MainInfoFragmentViewModel
+import com.squareup.picasso.Picasso
 
 class MainInfoFragment : Fragment() {
 
@@ -29,14 +31,30 @@ class MainInfoFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel.teamInfoLiveData.observe(viewLifecycleOwner) {
-
-        }
+        loadTeamInfoAndVenue()
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    @SuppressLint("SetTextI18n")
+    private fun loadTeamInfoAndVenue() = with(binding) {
+        viewModel.teamInfoLiveData.observe(viewLifecycleOwner) {
+            nameOfClub.text = it.name + " (${it.code})"
+            nameOfCountry.text = it.country
+            dateOfFounded.text = it.founded.toString()
+            Picasso.get()
+                .load(it.logo)
+                .into(logoClub)
+        }
+
+        viewModel.venueInfoLivedata.observe(viewLifecycleOwner) {
+            nameOfVenue.text = it.nameVenue
+            sizeOfStadium.text = it.capacity.toString()
+            nameOfCity.text = it.city
+        }
     }
 
 
